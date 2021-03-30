@@ -68,8 +68,8 @@ import _cloneDeep from 'lodash/cloneDeep'
 import _forEachRight from 'lodash/forEachRight'
 
 // local
-import TodoItem from '../components/TodoItem'
-import TodoCreator from '../components/TodoCreator'
+import TodoItem from './TodoItem'
+import TodoCreator from './TodoCreator'
 
 export default {
   name: 'todoApp',
@@ -123,7 +123,7 @@ export default {
       this.db = low(adapter)
 
       const hasTodos = this.db
-        .has('todo')
+        .has('todos')
         .value()
 
       if (hasTodos) {
@@ -144,6 +144,7 @@ export default {
         updatedAt: new Date(),
         done: false
       }
+
       this.db
         .get('todos')
         .push(newTodo)
