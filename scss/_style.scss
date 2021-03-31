@@ -130,6 +130,10 @@ label{
         }
         @media (#{$media--small}) {
           font-size:18px;
+          &:hover,
+          &.active{
+            text-shadow: 1px 3px yellowgreen;
+          }
         }
       }
     }
